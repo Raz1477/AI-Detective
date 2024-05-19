@@ -34,6 +34,7 @@ val_ds = tf.keras.preprocessing.image_dataset_from_directory(
     shuffle=True,
 )
 
+# Test Dataset
 test_ds = tf.keras.preprocessing.image_dataset_from_directory(
     test_data_dir,
     image_size=(img_height,img_width),
@@ -98,6 +99,7 @@ model.evaluate(test_ds)
 print(model.summary())
 predictions = model.predict(test_ds)
 
+# Accuracy and Loss Variables
 acc = history.history['accuracy']
 val_acc = history.history['val_accuracy']
 loss = history.history['loss']
