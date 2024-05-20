@@ -77,7 +77,7 @@ model = tf.keras.Sequential([
     tf.keras.layers.MaxPooling2D(),
     tf.keras.layers.Flatten(),
     tf.keras.layers.Dense(128, activation='softmax'),
-    tf.keras.layers.Dense(num_classes)
+    tf.keras.layers.Dense(num_classes, activation='softmax')
 ])
 
 # Compiling Model
@@ -91,7 +91,7 @@ model.compile(
 history = model.fit(
   train_ds,
   validation_data=val_ds,
-  epochs=9
+  epochs=17
 )
 
 # Testing the Model
